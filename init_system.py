@@ -1,6 +1,6 @@
 import numpy as np
 import sys
-
+import xml.etree.ElementTree as element_tree
 
 class SysInit:
     # this class used for update initial params of app
@@ -29,3 +29,15 @@ class SysInit:
             print('filetype: {}'.format(self._filetype))
         else:
             pass
+
+    @staticmethod
+    def load_plc_params(self, path):
+        tree_plc = element_tree.parse(path)
+        root_plc = tree_plc.getroot()
+
+    @staticmethod
+    def load_pc_params(self, path):
+        tree_pc = element_tree.parse(path)
+        root_pc = tree_pc.getroot()
+
+
